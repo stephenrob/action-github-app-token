@@ -53,11 +53,13 @@ function run() {
                     privateKey: privateKey,
                     request: request_1.request.defaults({ baseUrl: baseUrl })
                 },
+                baseUrl: baseUrl,
             });
             const { data } = yield appOctokit.apps.listInstallations();
             const resp = yield appOctokit.auth({
                 type: 'installation',
                 installationId: data[0].id,
+                request: request_1.request.defaults({ baseUrl: baseUrl })
             });
             // @ts-ignore
             core.setOutput('token', resp.token);

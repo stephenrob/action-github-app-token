@@ -24,6 +24,7 @@ async function run(): Promise<void> {
     const resp = await appOctokit.auth({
       type: 'installation',
       installationId: data[0].id,
+      request: r2.defaults({baseUrl: baseUrl})
     });
     // @ts-ignore
     core.setOutput('token', resp.token);
