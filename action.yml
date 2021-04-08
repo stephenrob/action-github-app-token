@@ -8,6 +8,9 @@ inputs:
   private_key:
     required: true
     description: 'Private key for the GitHub App'
+  base_url:
+    required: true
+    description: 'Base url for the GitHub Install'
 outputs:
   token:
     description: 'Github Token for App installation'
